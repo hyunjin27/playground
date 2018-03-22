@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.layout_bar{
+	display: block;
+	margin: 25px 50px 25px;
+}
+.se_line{
+	border-top: 1px dotted black;
+	margin: 25px;
+}
