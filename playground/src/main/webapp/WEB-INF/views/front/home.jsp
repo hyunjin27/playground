@@ -9,6 +9,6 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  가나다라 ${serverTime}. </P>
 </body>
 </html>
