@@ -9,8 +9,8 @@
 </head>
 <body>
 <h2>welcome home, ${sessionScope.name}</h2>
-<input type="button" value="정보수정" onclick="location.href='useredit.bob?userid=${sessionScope.userid}'">
-<input type="button" value="탈퇴" onclick="location.href='quit.bob'">
-<input type="button" value="로그아웃" onclick="location.href='logout.bob'">
+<input type="button" value="정보수정" onclick="location.href='useredit.play?userid=${sessionScope.userid}'">
+<input type="button" value="탈퇴" onclick="location.href='quit.play'">
+<input type="button" value="로그아웃" onclick="location.href='logout.play'">
 </body>
 </html>

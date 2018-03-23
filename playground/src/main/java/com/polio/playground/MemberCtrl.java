@@ -120,7 +120,6 @@ public class MemberCtrl {
 		Encrypt en = new Encrypt();
 		pwd = en.toMD5(pwd);
 		memberDTO memberDto=ses.selectOne("member.selectOne", userid);
-		if (memberDto != null) {}
 				
 		if(memberDto == null){
 			// 아이디 없음

@@ -7,7 +7,9 @@
 	<c:if test="${result eq 'ok'}">
 	<c:set var="userid" value="${userid}" scope="session" />
 	<c:set var="name" value="${name}" scope="session" />
-	<c:redirect url = "mypage.play"/>
+	<script>
+	location.href='mypage.play';
+	</script>
 	</c:if>
 	<c:if test="${result eq 'fail'}">
 	<script>

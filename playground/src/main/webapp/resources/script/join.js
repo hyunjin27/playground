@@ -15,7 +15,7 @@
                 // ajax 실행
                 $.ajax({
                     type : 'POST',
-                    url : '/boblog_member/id_check.bob',
+                    url : '/boblog_member/id_check.play',
                     data:
                     {
                         userid: userid
