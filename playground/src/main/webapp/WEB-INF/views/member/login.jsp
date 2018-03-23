@@ -20,6 +20,11 @@
 <title>LOGIN</title>
 </head>
 <body>
+<c:if test="${not empty sessionScope.userid }">
+	<script>
+	location.href='mypage.play';
+	</script>
+</c:if>
 <form id="login" name="login" method="post" action="login.play">
 아이디 : <input type="text" size="12" id="userid" name="userid"  pattern=".{4,12}" required title="아이디는 4글자 이상, 12글자 미만입니다."><span id="result_id_msg"></span><br>
 비밀번호 : <input type="password" size="12" id="pwd" name="pwd" required><br>

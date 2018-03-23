@@ -19,6 +19,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectOne" parameterType="String" resultType="polio.model.memberDTO">
 		select * from member where userid=#{userid}
 	</select>
+<!-- 회원 수정  -->
+	<update id="updateMember" parameterType="java.util.HashMap">
+		update member
+		set name=#{name},
+		email=#{email},
+		birth=#{birth}
+		where userid=#{userid}
+	</update>
 <!-- 암호 변경 -->
 	<update id="pwdchg" parameterType="java.util.HashMap">
 		update member set pwd=#{pwd} where userid=#{userid}

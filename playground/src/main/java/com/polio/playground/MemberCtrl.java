@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -82,8 +83,9 @@ public class MemberCtrl {
 	
 	// insert form
 	@RequestMapping(value="joindo.play", method=RequestMethod.POST)
-	public String joinDo(@ModelAttribute("memberDTO") memberDTO dto) {
+	public ModelAndView joinDo(@ModelAttribute("memberDTO") memberDTO dto) {
 		logger.info("submitted join form");
+		ModelAndView mv = new ModelAndView();
 		// 패스워드 암호화
 		String pwd = dto.getPwd();
 		Encrypt en = new Encrypt();
@@ -95,7 +97,10 @@ public class MemberCtrl {
 			dto.setBirth(null);
 			}
 		ses.insert("member.insertMember", dto);
-		return ".main.member.login";
+		mv.setViewName(".main.member.msg");
+		mv.addObject("msg", dto.getName() + " 님 가입을 축하드립니다.");
+		mv.addObject("url", "login.play");
+		return mv;
 	}
 	
 	@RequestMapping(value="id_check.play", method=RequestMethod.POST)
@@ -108,6 +113,27 @@ public class MemberCtrl {
 			check=1;//사용 가능한 id
 		}
 		return new ModelAndView("member/id_check","id",check);
+	}
+	@RequestMapping(value="useredit.play", method=RequestMethod.POST)
+	public ModelAndView userEditDo(HttpServletRequest req, HttpSession ss) {
+		logger.info("edit user init");
+		ModelAndView mv = new ModelAndView();
+		HashMap<String,String> map = new HashMap<String,String>();
+		// 패스워드 암호화
+		map.put("userid", req.getParameter("userid"));
+		map.put("name", req.getParameter("name"));
+		map.put("email", req.getParameter("email"));
+		if (req.getParameter("birth")=="" ||req.getParameter("birth").length()<2) {
+			map.put("birth",null);
+		}else {
+			map.put("birth",req.getParameter("birth"));
+		}
+		ses.update("member.updateMember", map);
+		mv.setViewName(".main.member.msg");
+		mv.addObject("msg", "변경이 완료되었습니다. 다시 로그인하십시오.");
+		mv.addObject("url", "login.play");
+		ss.invalidate();
+		return mv;
 	}
 
 	// login form
@@ -145,7 +171,7 @@ public class MemberCtrl {
 		ses.delete("member.userDelete", userid);
 		mv.setViewName(".main.member.msg");
 		mv.addObject("msg", "탈퇴가 완료되었습니다. 이용해주셔서 감사합니다.");
-		mv.addObject("url", "login.play");
+		mv.addObject("url", "logout.play");
 		
 		return mv;
 	}

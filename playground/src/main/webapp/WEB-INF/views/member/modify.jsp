@@ -17,6 +17,7 @@
 <li>이메일 : <input type="email" size="30" name="email" value="${dto.email}" required></li>
 <li>생년월일 :  <input type="date" name="birth" value="${dto.birth}"></li>
 </ul>
+<input type="hidden" name="userid" value="${sessionScope.userid}">
 <input type="submit"><input type="reset">
 </form>
 </c:if>
@@ -38,7 +39,7 @@
 <%-- 탈퇴 --%>
 <form name="myform" action="quit.play" method="post">
 <h3>회원 탈퇴 하시겠습니까?</h3>
-<input type="hidden" name="userid" value="${sessionScope.name}">
+<input type="hidden" name="userid" value="${sessionScope.userid}">
 <input type="submit"><input type="button" value="취소" onclick="history.back()">
 </form>
 </c:if>
