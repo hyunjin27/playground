@@ -201,7 +201,7 @@ public class MemberCtrl {
 			logger.info("ok. change db.");
 			ses.update("member.pwdchg", map);
 			mv.addObject("msg", "암호가 변경되었습니다. 새로운 아이디로 다시 로그인 바랍니다.");
-			mv.addObject("url", "login.play");
+			mv.addObject("url", "logout.play");
 			}
 		}else {
 			// 이전 암호가 다른 경우

@@ -2,9 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-<html>
+<!DOCTYPE html> <!-- 문서타입 --> 
+<html lang="ko"> <!-- 휴먼랭귀지 --> 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"> <!-- 문자셋 -->
 <title>Welcome, this is playground</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/layout.css" />
 </head>

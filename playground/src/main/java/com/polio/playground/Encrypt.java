@@ -10,7 +10,7 @@ public class Encrypt {
 	public String toMD5(String str){
 		String MD5 = ""; 
 		try{
-
+			// AES 나 TKIP 같은 방법으로도 인코딩 가능하나, 서버의 한계로 MD5로 진행.
 			MessageDigest md = MessageDigest.getInstance("MD5"); 
 			md.update(str.getBytes()); 
 			byte byteData[] = md.digest();

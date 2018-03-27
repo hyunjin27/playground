@@ -18,6 +18,7 @@ function getCode(lat, lng){
 <title>주소 찾기</title>
 </head>
 <body>
+<div style="margin: 0 auto;">CLICK ON THE MAP to CHOOSE a PLACE</div>
 <div id="googleMap" style="width:100%;height:400px;"></div>
 
 <script>
@@ -55,8 +56,8 @@ geocoder.geocode({
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvT5BQVpORuQR-AHY9bpZcnxZzpnkH9G0&callback=myMap"></script>
 <ul>
-<li>코드 : <input class="field" size="18" id="pluscode"></li>
-<li>주소 : <input class="field" size="50" id="address"></li>
+<li>코드 : <input class="field" size="18" id="pluscode" readonly="readonly"></li>
+<li>주소 : <input class="field" size="50" id="address" readonly="readonly"></li>
 <li><input type="button" value="input" onclick="setParentText()"></li>
 <li><input type="button" value="창닫기" onclick="window.close()"></li> 
 </ul>

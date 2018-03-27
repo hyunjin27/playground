@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원 정보 관리</title>
-</head>
-<body>
 <c:if test="${flag eq 'edit'}">
 <h3>정보 변경하기</h3>
 <form name="myform" action="useredit.play" method="post">
@@ -43,5 +37,3 @@
 <input type="submit"><input type="button" value="취소" onclick="history.back()">
 </form>
 </c:if>
-</body>
-</html>
