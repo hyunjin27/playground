@@ -36,6 +36,22 @@ insert  into `member`(`userid`,`pwd`,`name`,`email`,`birth`,`regdate`) values
 ('asdasd','7815696ecbf1c96e6894b779456d330e','asd','asd@asd','2014-01-01','2018-03-21 14:13:20'),
 ('test','098f6bcd4621d373cade4e832627b4f6','테스트','test@test.com',NULL,'2018-03-21 10:30:54');
 
+/*Table structure for table `place_info` */
+
+DROP TABLE IF EXISTS `place_info`;
+
+CREATE TABLE `place_info` (
+  `p_no` int(8) NOT NULL AUTO_INCREMENT COMMENT '가게일련번호',
+  `p_name` varchar(50) NOT NULL COMMENT '가게이름',
+  `p_addr` varchar(16) NOT NULL COMMENT '가게위치',
+  `p_detail` text COMMENT '가게설명',
+  `regdate` datetime DEFAULT NULL COMMENT '등록일자',
+  `reguser` varchar(12) DEFAULT NULL COMMENT '등록자',
+  PRIMARY KEY (`p_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=euckr;
+
+/*Data for the table `place_info` */
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
