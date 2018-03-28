@@ -1,9 +1,18 @@
 @charset "UTF-8";
 .layout_bar{
 	display: block;
-	margin: 25px 50px 25px;
+	width:80%;
+	margin: 25px 10% 25px;
 }
 .se_line{
 	border-top: 1px dotted black;
 	margin: 25px;
+}
+body {
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+h1 {
+	font-family: 'Nanum Pen Script', cursive;
+	font-size: 48px;
 }

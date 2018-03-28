@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div style="width:352; height:109; margin: auto;">
+<div style="height:80px; margin: auto;">
 <a href="<%=request.getContextPath() %>/">    
 <img src="<%=request.getContextPath() %>/resources/images/pp_logo.jpg" border=0>
 </a>
@@ -17,6 +17,6 @@
 		<input type="button" value="help" onclick="window.location.href = 'mailto:help@p1ayground.server'">
 	</div>
 </div>
-<div style="position: relative; width:80%; height:50; top:-20px; margin:0 auto; text-align:center;">
+<div style="position: relative; width:80%; height:50; top:0px; margin:0 auto; text-align:center;">
 <h4><a href="new_place.play">오락실 신규등록</a> | 메뉴 | 메뉴 | 메뉴 | 메뉴</h4>
 </div>

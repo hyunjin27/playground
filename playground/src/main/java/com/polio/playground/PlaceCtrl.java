@@ -35,6 +35,9 @@ public class PlaceCtrl {
 		System.out.println(dto.getP_detail());
 		System.out.println(dto.getReguser());
 		ModelAndView mv = new ModelAndView();
+		mv.setViewName(".main.member.msg");
+		mv.addObject("msg", "상점등록이 완료되었습니다");
+		mv.addObject("url", "mypage.play");
 		return mv;
 	}
 }

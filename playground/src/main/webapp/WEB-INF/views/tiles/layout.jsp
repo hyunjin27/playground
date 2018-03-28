@@ -8,6 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8"> <!-- 문자셋 -->
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding|Nanum+Pen+Script" rel="stylesheet"><!-- 폰트 -->
 <title>Welcome, this is playground</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/layout.css" />
 </head>
@@ -15,8 +16,8 @@
 	<div id="header" class="layout_bar">
 		<tiles:insertAttribute name="header"></tiles:insertAttribute>
 	</div>
-	<div class="se_line" style="position: relative; top: -35px; height:1px;"></div>
-	<div id="content" style="position: relative; top: -35px; margin: 0 50 0;">
+	<div class="se_line"></div>
+	<div id="content" class="layout_bar">
 		<tiles:insertAttribute name="content"></tiles:insertAttribute>
 	</div>
 	<div class="se_line"></div>
