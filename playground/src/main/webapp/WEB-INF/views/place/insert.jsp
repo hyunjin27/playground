@@ -7,6 +7,7 @@
 	location.href='login.play';
 	</script>
 </c:if>
+<c:if test="${not empty sessionScope.userid}">
  <script type="text/javascript">
  
      var openWin;
@@ -37,3 +38,4 @@
 <input type="hidden" name="reguser" value="${sessionScope.userid}">
 </form>
 </div>
+</c:if>

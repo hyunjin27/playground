@@ -18,5 +18,5 @@
 	</div>
 </div>
 <div style="position: relative; width:80%; height:50; top:0px; margin:0 auto; text-align:center;">
-<h4><a href="new_place.play">오락실 신규등록</a> | 메뉴 | 메뉴 | 메뉴 | 메뉴</h4>
+<h4><a href="new_place.play">오락실 신규등록</a> | <a href="place_list.play">오락실 목록보기</a> | 메뉴 | 메뉴 | 메뉴</h4>
 </div>
