@@ -55,7 +55,7 @@ public class PlaceCtrl {
 		return mv;
 	}
 	@RequestMapping(value =  "place_del.play", method = RequestMethod.POST)
-	public ModelAndView rateDel(HttpServletRequest req) {
+	public ModelAndView placeDel(HttpServletRequest req) {
 		ses.delete("place.deletePlace", req.getParameter("p_no").toString());
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName(".main.member.msg");
@@ -63,5 +63,30 @@ public class PlaceCtrl {
 		mv.addObject("url", "place_list.play");
 		return mv;
 	}
-
+	@RequestMapping(value =  "place_mod.play", method = RequestMethod.GET)
+	public ModelAndView placeMod(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		String key = req.getParameter("p_no").toString();
+		placeinfoDTO dto = ses.selectOne("place.selectOne", key);
+		mv.setViewName(".main.place.modify");
+		mv.addObject("p_no", req.getParameter("p_no").toString());
+		mv.addObject("dto", dto);
+		return mv;
+	}
+	@RequestMapping(value =  "place_mod_do.play", method = RequestMethod.POST)
+	public ModelAndView placeModeDO(HttpServletRequest req) {
+		HashMap <String,String>map=new HashMap<String,String>();
+		map.put("p_name", req.getParameter("p_name"));
+		map.put("p_addr", req.getParameter("p_addr"));
+		map.put("p_area", req.getParameter("p_area"));
+		map.put("p_detail", req.getParameter("p_detail"));
+		map.put("reguser", req.getParameter("reguser"));
+		map.put("p_no", req.getParameter("p_no"));
+		ModelAndView mv = new ModelAndView();
+		ses.update("place.updatePlace", map);
+		mv.setViewName(".main.member.msg");
+		mv.addObject("msg", "상점수정이 완료되었습니다");
+		mv.addObject("url", "place_list.play");
+		return mv;
+	}
 }

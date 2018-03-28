@@ -40,13 +40,13 @@ function del(p_no){
 <table id="place" class="display" cellspacing="0" width="100%">
 <thead>
 <tr>
-<td>번호</td><td>이름</td><td>코드</td><td>설명</td><td>등록일</td><td>등록자</td><td>수정</td><td>삭제</td>
+<td>번호</td><td>이름</td><td>코드</td><td>지역</td><td>설명</td><td>등록일</td><td>등록자</td><td>수정</td><td>삭제</td>
 </tr>
 </thead>
 <tbody>
 <c:forEach var="item" items="${list}">
 <tr>
-<td>${item.p_no}</td><td>${item.p_name}</td><td><a href="https://plus.codes/${item.p_addr}" target="_blank">${item.p_addr}</a></td>
+<td>${item.p_no}</td><td>${item.p_name}</td><td><a href="https://plus.codes/${item.p_addr}" target="_blank">${item.p_addr}</a></td><td>${item.p_area}</td>
 <c:choose>
 <c:when test="${fn:length(item.p_detail) > 10}">
 <td><c:out value="${fn:substring(item.p_detail,0,9)}"/>...</td>
@@ -55,7 +55,7 @@ function del(p_no){
 <td><c:out value="${item.p_detail}"/></td>
 </c:otherwise>
 </c:choose> 
-<td>${item.regdate}</td><td>${item.reguser}</td><td><a href="">수정</a></td><td><a href="#" onclick="del('${item.p_no}')">삭제</a></td>
+<td><fmt:formatDate value="${item.regdate}" pattern="yy-MM-dd kk:mm"/></td><td>${item.reguser}</td><td><a href="place_mod.play?p_no=${item.p_no}">수정</a></td><td><a href="#" onclick="del('${item.p_no}')">삭제</a></td>
 </tr>
 </c:forEach>
 </tbody>

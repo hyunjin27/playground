@@ -8,6 +8,8 @@
 <script type="text/javascript">
 function setParentText(){
     opener.document.getElementById("code").value = document.getElementById("pluscode").value;
+    var area = document.getElementById("address").value.split(" ");
+    opener.document.getElementById("p_area").value=area[1];
     window.close();
 }
 function getCode(lat, lng){

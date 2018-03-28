@@ -7,27 +7,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectAll" resultType="java.util.HashMap">
 		select * from place_info 
 	</select>
-<!-- insert 회원가입 -->
+<!-- insert -->
 	<insert id="insertPlace" parameterType="polio.model.placeinfoDTO">
-		insert into place_info (p_name, p_addr, p_detail, regdate, reguser) 
-		values (#{p_name}, #{p_addr}, #{p_detail}, NOW(), #{reguser})
+		insert into place_info (p_name, p_addr, p_area, p_detail, regdate, reguser) 
+		values (#{p_name}, #{p_addr}, #{p_area}, #{p_detail}, NOW(), #{reguser})
 	</insert>
 
-<!-- 회원정보 불러오기 -->
+<!-- 불러오기 -->
 	<select id="selectOne" parameterType="String" resultType="polio.model.placeinfoDTO">
 		select * from place_info where p_no=#{p_no}
 	</select>
-<!-- 회원 수정  -->
+<!-- 수정  -->
 	<update id="updatePlace" parameterType="java.util.HashMap">
 		update place_info
 		set p_name=#{p_name},
 		p_addr=#{p_addr},
+		p_area=#{p_area},
 		p_detail=#{p_detail},
 		reguser=#{reguser}
 		where p_no=#{p_no}
 	</update>
 	
-  <!-- 회원 탈퇴 -->
+  <!-- 삭제 -->
   <delete id="deletePlace" parameterType="String">
     delete from place_info where p_no=#{p_no} 
   </delete>	

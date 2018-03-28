@@ -6,6 +6,7 @@ public class placeinfoDTO {
 	String p_name;
 	String p_addr;
 	String p_detail;
+	String p_area;
 	java.util.Date regdate;
 	String reguser;
 	public placeinfoDTO() {
@@ -22,12 +23,19 @@ public class placeinfoDTO {
 	public void setP_name(String p_name) {
 		this.p_name = p_name;
 	}
+	public String getP_area() {
+		return p_area;
+	}
+	public void setP_area(String p_area) {
+		this.p_area = p_area;
+	}
 	public String getP_addr() {
 		return p_addr;
 	}
 	public void setP_addr(String p_addr) {
 		this.p_addr = p_addr;
 	}
+
 	public String getP_detail() {
 		return p_detail;
 	}
