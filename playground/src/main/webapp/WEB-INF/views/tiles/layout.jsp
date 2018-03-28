@@ -12,7 +12,7 @@
 <title>Welcome, this is playground</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/layout.css" />
 </head>
-<body>
+<body style="margin: 0 auto; padding: 0;">
 	<div id="header" class="layout_bar">
 		<tiles:insertAttribute name="header"></tiles:insertAttribute>
 	</div>

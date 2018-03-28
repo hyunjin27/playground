@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div style="height:80px; margin: auto;">
 <a href="<%=request.getContextPath() %>/">    
-<img src="<%=request.getContextPath() %>/resources/images/pp_logo.jpg" border=0>
+<img src="<%=request.getContextPath() %>/resources/images/pp_logo.png" border=0>
 </a>
-	<div id="loginbtn" style="position: relative; top: -70px; left: 80%;">
+	<div id="loginbtn" style="position: relative; top: -120px; left: 80%;">
 		<c:if test="${empty sessionScope.userid }">
 			<input type="button" value="login" onclick="location.href='login.play'">
 			<input type="button" value="join" onclick="location.href='join.play'">
