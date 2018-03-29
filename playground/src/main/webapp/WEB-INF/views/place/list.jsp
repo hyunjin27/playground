@@ -46,7 +46,7 @@ function del(p_no){
 <tbody>
 <c:forEach var="item" items="${list}">
 <tr>
-<td>${item.p_no}</td><td>${item.p_name}</td><td><a href="https://plus.codes/${item.p_addr}" target="_blank">${item.p_addr}</a></td><td>${item.p_area}</td>
+<td>${item.p_no}</td><td><a href="place_view.play?p_no=${item.p_no}">${item.p_name}</a></td><td><a href="https://plus.codes/${item.p_addr}" target="_blank">${item.p_addr}</a></td><td>${item.p_area}</td>
 <c:choose>
 <c:when test="${fn:length(item.p_detail) > 10}">
 <td><c:out value="${fn:substring(item.p_detail,0,9)}"/>...</td>

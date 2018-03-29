@@ -1,0 +1,93 @@
+@charset "UTF-8";
+.navbar {
+    height: 40px;
+    background-color: black;
+}
+
+.navbar a{
+   text-decoration: none; 
+}
+
+ul.topnav {
+    margin: 0;
+    padding: 0;
+}
+
+ul.topnav a{
+    color: red;
+}
+
+ul.topnav  li{
+    list-style: none;
+    display: inline-block;
+    color: red;
+    padding: 4px 8px;
+    line-height: 32px;
+    float: left;
+    clear: none;
+    box-sizing: border-box;
+}
+
+.topnav li:hover {
+	color: black;
+    background-color: yellow;
+}
+
+.left {
+    float: left;
+}
+
+ul.rightNav {
+    margin:0;
+    padding:0;
+    text-align: right;
+}
+
+ul.rightNav a{
+    color: white;
+}
+
+.rightNav li:hover {
+    background-color: red;
+}
+
+ul.rightNav  li{
+    list-style: none;
+    display: inline-block;
+    color: white;
+    padding: 4px 8px;
+    line-height: 32px;
+    position:relative;
+}
+
+ul.rightSubNav {
+    position: absolute;
+    right:0;
+    margin: 4px 0 0 -20px;
+    padding: 0;
+    display: none;
+    white-space:nowrap;
+}
+ul.rightSubNav li {
+    background-color: red;
+    list-style: none;
+    display: inline;
+    color: white;
+    padding: 4px 8px;
+    position: relative;
+    line-height: 32px;
+}
+
+.rightNav li:hover ul.rightSubNav {
+    display: inline-block;
+    background-color: red;
+    margin-top: 0px;
+}
+
+@-moz-document url-prefix() {
+    .rightNav li:hover ul.rightSubNav {
+    display: inline-block;
+    background-color: red;
+    margin-top: 32px;
+	}
+}

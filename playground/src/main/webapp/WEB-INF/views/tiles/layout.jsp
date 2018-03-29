@@ -5,15 +5,15 @@
 <!DOCTYPE html> <!-- 문서타입 --> 
 <html lang="ko"> <!-- 휴먼랭귀지 --> 
 <head>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/layout.css" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8"> <!-- 문자셋 -->
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding|Nanum+Pen+Script" rel="stylesheet"><!-- 폰트 -->
 <title>Welcome, this is playground</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/layout.css" />
 </head>
-<body style="margin: 0 auto; padding: 0;">
-	<div id="header" class="layout_bar">
+<body>
+	<div id="header" class="layout_bar" style="margin-top: 25px;">
 		<tiles:insertAttribute name="header"></tiles:insertAttribute>
 	</div>
 	<div class="se_line"></div>

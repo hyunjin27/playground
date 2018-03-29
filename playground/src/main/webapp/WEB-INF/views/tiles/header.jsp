@@ -1,22 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div style="height:80px; margin: auto;">
-<a href="<%=request.getContextPath() %>/">    
-<img src="<%=request.getContextPath() %>/resources/images/pp_logo.png" border=0>
-</a>
-	<div id="loginbtn" style="position: relative; top: -120px; left: 80%;">
-		<c:if test="${empty sessionScope.userid }">
-			<input type="button" value="login" onclick="location.href='login.play'">
-			<input type="button" value="join" onclick="location.href='join.play'">
-		</c:if>
-		<c:if test="${not empty sessionScope.userid }">
-			<input type="button" value="logout" onclick="location.href='logout.play'">
-			<input type="button" value="mypage" onclick="location.href='mypage.play'">
-		</c:if>
-		<input type="button" value="help" onclick="window.location.href = 'mailto:help@p1ayground.server'">
-	</div>
-</div>
-<div style="position: relative; width:80%; height:50; top:0px; margin:0 auto; text-align:center;">
-<h4><a href="new_place.play">오락실 신규등록</a> | <a href="place_list.play">오락실 목록보기</a> | 메뉴 | 메뉴 | 메뉴</h4>
-</div>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/header.css"/>
+<div class="navbar">
+            <ul class="topnav left">
+                <li><a href="<%=request.getContextPath() %>/">P1AYGROUND</a></li>
+            </ul>    
+            <ul class="rightNav">
+            <c:if test="${empty sessionScope.userid}">
+                <li><a href="login.play">로그인</a></li>
+                <li><a href="join.play">회원가입</a></li>
+            </c:if>
+            <c:if test="${not empty sessionScope.userid}">
+                <li><a href="logout.play">로그아웃</a></li>
+                <li><a href="mypage.play">마이페이지</a></li>
+                <li>장소관리
+                <ul class="rightSubNav">
+                            <li><a href="new_place.play">신규 등록</a></li>
+                            <li><a href="place_list.play">목록 보기</a></li>
+                </ul>
+                </li>
+            </c:if>    
+                <li>도움말
+                        <ul class="rightSubNav">
+                            <li><a href="#" onclick="alert('PLAYGROUND PROJECT 를 소개합니다.')">프로젝트 소개</a></li>
+                            <li><a href="#" onclick="alert('TEAM PLAYGROUND 를 소개합니다.')">만든 사람들</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </div>

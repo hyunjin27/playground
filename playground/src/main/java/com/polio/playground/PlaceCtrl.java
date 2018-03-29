@@ -46,6 +46,24 @@ public class PlaceCtrl {
 		mv.addObject("url", "place_list.play");
 		return mv;
 	}
+	@RequestMapping(value =  "place_view.play", method = RequestMethod.GET)
+	public ModelAndView placeView(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		if (req.getParameter("p_no")==null || req.getParameter("p_no").length() < 1) {
+			// 그냥 진입한 경우
+			mv.setViewName(".main.member.msg");
+			mv.addObject("msg", "잘못된 접근입니다.");
+			mv.addObject("url", ".");
+			return mv;
+		}else{
+			String key = req.getParameter("p_no").toString();
+			placeinfoDTO dto = ses.selectOne("place.selectOne", key);
+			mv.setViewName(".main.place.content");
+			mv.addObject("p_no", req.getParameter("p_no").toString());
+			mv.addObject("dto", dto);
+			return mv;
+		}
+	}
 	@RequestMapping("place_list.play")
 	public ModelAndView getList() {
 		List<HashMap<String, String>> list = ses.selectList("place.selectAll");
