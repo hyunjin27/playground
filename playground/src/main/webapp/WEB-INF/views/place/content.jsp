@@ -1,16 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/openlocationcode/latest/openlocationcode.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <div id="content_wrapper" style="display: flex;">
-<div id="content_main" style="float: left; width: 50%; flex: 50%;">
+<div id="content_main" style="float: left; width: 30%; flex: 50%;">
+<a href="<%=request.getContextPath() %>/resources/images/no_photo.JPG" target="_blank"><img src="<%=request.getContextPath() %>/resources/images/no_photo.JPG" border="0" style="border-style: inset; border-color: black; border-width: 3px; margin-left:15%; max-width: 35%; height: auto;"></a>
 <ul>
 <li>상점명 : ${dto.p_name}</li>
 <li>지역 : ${dto.p_area}</li>
-<li>이미지 : <img src="<%=request.getContextPath() %>/resources/images/no_photo.JPG" border="0" height="80" width="76"></li>
+<li>상세 설명<BR><% pageContext.setAttribute("newLineChar", "\n"); %>${fn:replace(dto.p_detail, newLineChar, "<br/>")}
+</li>
 </ul>
 </div>
-<div id="content_map" style="width: 50%;">
+<div id="content_map" style="width: 70%;">
 <ul>
 <li>CODE : ${dto.p_addr}</li>
 <li>ADDRESS : <span id="address"></span></li>
