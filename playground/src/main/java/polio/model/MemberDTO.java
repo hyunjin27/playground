@@ -1,6 +1,6 @@
 package polio.model;
 
-public class memberDTO {
+public class MemberDTO {
 	
 	String userid;
 	String pwd;
@@ -8,7 +8,7 @@ public class memberDTO {
 	String email;
 	String birth;
 	
-	public memberDTO() {
+	public MemberDTO() {
 	}
 
 

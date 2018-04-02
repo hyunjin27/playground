@@ -33,7 +33,7 @@ public class PlaceCtrl {
 		return "/place/search";
 	}
 	@RequestMapping("insert.play")
-	public ModelAndView insertDo(placeinfoDTO dto) {
+	public ModelAndView insertDo(PlaceinfoDTO dto) {
 		logger.info("doing insert");
 		/*System.out.println(dto.getP_name());
 		System.out.println(dto.getP_addr());
@@ -57,7 +57,7 @@ public class PlaceCtrl {
 			return mv;
 		}else{
 			String key = req.getParameter("p_no").toString();
-			placeinfoDTO dto = ses.selectOne("place.selectOne", key);
+			PlaceinfoDTO dto = ses.selectOne("place.selectOne", key);
 			mv.setViewName(".main.place.content");
 			mv.addObject("p_no", req.getParameter("p_no").toString());
 			mv.addObject("dto", dto);
@@ -85,7 +85,7 @@ public class PlaceCtrl {
 	public ModelAndView placeMod(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
 		String key = req.getParameter("p_no").toString();
-		placeinfoDTO dto = ses.selectOne("place.selectOne", key);
+		PlaceinfoDTO dto = ses.selectOne("place.selectOne", key);
 		mv.setViewName(".main.place.modify");
 		mv.addObject("p_no", req.getParameter("p_no").toString());
 		mv.addObject("dto", dto);

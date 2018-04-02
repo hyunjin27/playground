@@ -10,7 +10,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,7 +46,7 @@ public class MemberCtrl {
 	@RequestMapping("useredit.play")
 	public ModelAndView useredit(String userid) {
 		ModelAndView mv = new ModelAndView();
-		memberDTO memberDto=ses.selectOne("member.selectOne", userid);
+		MemberDTO memberDto=ses.selectOne("member.selectOne", userid);
 		mv.setViewName(".main.member.modify");
 		mv.addObject("flag", "edit");
 		mv.addObject("dto" , memberDto);
@@ -83,7 +82,7 @@ public class MemberCtrl {
 	
 	// insert form
 	@RequestMapping(value="joindo.play", method=RequestMethod.POST)
-	public ModelAndView joinDo(@ModelAttribute("memberDTO") memberDTO dto) {
+	public ModelAndView joinDo(@ModelAttribute("memberDTO") MemberDTO dto) {
 		logger.info("submitted join form");
 		ModelAndView mv = new ModelAndView();
 		// 패스워드 암호화
@@ -145,7 +144,7 @@ public class MemberCtrl {
 		// 패스워드 암호화
 		Encrypt en = new Encrypt();
 		pwd = en.toMD5(pwd);
-		memberDTO memberDto=ses.selectOne("member.selectOne", userid);
+		MemberDTO memberDto=ses.selectOne("member.selectOne", userid);
 				
 		if(memberDto == null){
 			// 아이디 없음
@@ -185,7 +184,7 @@ public class MemberCtrl {
 		logger.info("old password : " + oldpwd);
 		String pwd = en.toMD5(req.getParameter("pwd").toString());
 		logger.info("new password : " + pwd);
-		memberDTO dto=ses.selectOne("member.selectOne", req.getParameter("userid").toString());
+		MemberDTO dto=ses.selectOne("member.selectOne", req.getParameter("userid").toString());
 		if (oldpwd.equals(dto.getPwd())) {
 			//이전 암호가 동일한경우
 			logger.info("old password ok");

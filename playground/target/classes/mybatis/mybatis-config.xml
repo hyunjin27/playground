@@ -7,5 +7,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <mappers>
         <mapper resource="/mybatis/member.xml"/>
         <mapper resource="/mybatis/place.xml"/>
+        <mapper resource="/mybatis/game.xml"/>
     </mappers>
 </configuration>

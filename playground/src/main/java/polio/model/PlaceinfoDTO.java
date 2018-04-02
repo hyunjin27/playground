@@ -1,6 +1,6 @@
 package polio.model;
 
-public class placeinfoDTO {
+public class PlaceinfoDTO {
 	
 	int p_no;
 	String p_name;
@@ -9,7 +9,7 @@ public class placeinfoDTO {
 	String p_area;
 	java.util.Date regdate;
 	String reguser;
-	public placeinfoDTO() {
+	public PlaceinfoDTO() {
 	}
 	public int getP_no() {
 		return p_no;

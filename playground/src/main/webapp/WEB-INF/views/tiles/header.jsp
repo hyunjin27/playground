@@ -20,6 +20,12 @@
                             <li><a href="place_list.play">목록 보기</a></li>
                 </ul>
                 </li>
+                <li>게임관리
+                <ul class="rightSubNav">
+                            <li><a href="new_game.play">신규 등록</a></li>
+                            <li><a href="game_list.play">목록 보기</a></li>
+                </ul>
+                </li>
             </c:if>    
                 <li>도움말
                         <ul class="rightSubNav">
