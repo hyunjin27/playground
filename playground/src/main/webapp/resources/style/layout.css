@@ -21,3 +21,17 @@ h1 {
 	font-family: 'Nanum Pen Script', cursive;
 	font-size: 48px;
 }
+
+.pMap{
+	display: block;
+	position: relative; 
+	top: -30px; 
+	margin: 0 auto; 
+	float: right;
+	}
+	
+@media screen and (max-width: 900px){
+	.pMap{
+	display: none;
+	}
+}

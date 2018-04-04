@@ -17,7 +17,7 @@
 		<tiles:insertAttribute name="header"></tiles:insertAttribute>
 	</div>
 	<div class="se_line"></div>
-	<div id="content" class="layout_bar">
+	<div id="content" class="layout_bar" style="min-height: 350px;">
 		<tiles:insertAttribute name="content"></tiles:insertAttribute>
 	</div>
 	<div class="se_line"></div>

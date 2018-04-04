@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/script/join.js"></script>
+<h1>JOIN to PlayGround</h1>
 <form action="joindo.play" method="post" id="joinform">
 <ul>
 <li>아이디 : <input type="text" size="12" id="userid" name="userid"  pattern=".{4,12}" required title="아이디는 4글자 이상, 12글자 미만입니다."><span id="result_id_msg"></span></li>

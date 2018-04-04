@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:if test="${flag eq 'edit'}">
-<h3>정보 변경하기</h3>
+<h1>Edit User Information</h1>
 <form name="myform" action="useredit.play" method="post">
 <ul>
 <li>아이디 : ${dto.userid}</li>
@@ -19,6 +19,7 @@
 <%-- 암호변경 --%>
 <form name="myform" action="pwdchg.play" method="post">
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/script/join.js"></script>
+<h1>PASSWORD CHANGE</h1>
 <h3>암호 변경하기</h3>
 <ul>
 <li>이전 암호 : <input type="text" name="oldpwd" id="oldpwd" size="12" required></li>
@@ -32,6 +33,7 @@
 <c:if test="${flag eq 'quit'}">
 <%-- 탈퇴 --%>
 <form name="myform" action="quit.play" method="post">
+<h1>Are you really want to Quit from PlayGround?</h1>
 <h3>회원 탈퇴 하시겠습니까?</h3>
 <input type="hidden" name="userid" value="${sessionScope.userid}">
 <input type="submit"><input type="button" value="취소" onclick="history.back()">
