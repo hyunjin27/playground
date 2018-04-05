@@ -28,9 +28,13 @@ CREATE TABLE `game_and_place` (
   `gnp_credit` varchar(8) DEFAULT NULL COMMENT '단위 게임비용당 크레딧',
   `gnp_detail` text COMMENT '게임기 설명',
   PRIMARY KEY (`gnp_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=euckr;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=euckr;
 
 /*Data for the table `game_and_place` */
+
+insert  into `game_and_place`(`gnp_no`,`p_no`,`g_no`,`gnp_price`,`gnp_credit`,`gnp_detail`) values 
+(2,'2','2','1000','1','tttt'),
+(6,'2','2','2000','2','test2');
 
 /*Table structure for table `game_info` */
 
@@ -92,7 +96,7 @@ CREATE TABLE `place_info` (
 insert  into `place_info`(`p_no`,`p_name`,`p_addr`,`p_area`,`p_detail`,`regdate`,`reguser`) values 
 (2,'더 조은 컴퓨터 아트 게임장','8Q98FPH3+WW4','인천광역시','에라모르겠다','2018-03-28 14:41:53','test'),
 (3,'테스트','8Q98FMCR+4MH','인천광역시','ㅅㄷㄴㅅ','2018-03-28 15:24:36','test'),
-(4,'테스트2','8Q98HX4Q+Q7P','서울특별시','ㅋㅋㅋㅋㅋㅋ','2018-03-28 16:24:57','test');
+(4,'테스트2','8Q98GP2M+8CM','인천광역시','ㅋㅋㅋㅋㅋㅋ','2018-03-28 16:24:57','test');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

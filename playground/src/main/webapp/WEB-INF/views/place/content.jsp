@@ -14,6 +14,14 @@
 <li>상세 설명<BR><% pageContext.setAttribute("newLineChar", "\n"); %>${fn:replace(dto.p_detail, newLineChar, "<br/>")}
 </li>
 </ul>
+<c:if test="${not empty list}">
+<h3 style="font-family: 'Nanum Pen Script', cursive;">보유게임목록</h3>
+<textarea rows="5" cols="40" readonly="readonly" style="font-size: 12px; overflow-y: scroll; border: 2px solid red; border-radius: 4px;">
+<c:forEach var="item" items="${list}">
+- ${item.g_name} / ${item.gnp_price} 원 @ ${item.gnp_credit} 플레이
+</c:forEach>
+</textarea>
+</c:if>
 </div>
 <div id="content_map" style="width: 70%;">
 <ul>

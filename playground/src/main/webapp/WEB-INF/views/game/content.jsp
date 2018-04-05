@@ -27,5 +27,13 @@
 </li>
 <li><input type="button" value="go back" onclick="history.back()"></li>
 </ul>
+<c:if test="${not empty list}">
+<h3 style="font-family: 'Nanum Pen Script', cursive;">해당 게임 보유 영업장 목록</h3>
+<textarea rows="5" cols="40" readonly="readonly" style="font-size: 12px; overflow-y: scroll; border: 2px solid red; border-radius: 4px;">
+<c:forEach var="item" items="${list}">
+- [${item.p_area}] ${item.p_name} / ${item.gnp_price} 원 @ ${item.gnp_credit} 플레이
+</c:forEach>
+</textarea>
+</c:if>
 </div>
 </div>

@@ -54,6 +54,8 @@ public class PlaceCtrl {
 		}else{
 			String key = req.getParameter("p_no").toString();
 			PlaceinfoDTO dto = ses.selectOne("place.selectOne", key);
+			List<HashMap<String, String>> list = ses.selectList("gnp.placeGameList",key);
+			mv.addObject("list", list);
 			mv.setViewName(".main.place.content");
 			mv.addObject("p_no", req.getParameter("p_no").toString());
 			mv.addObject("dto", dto);

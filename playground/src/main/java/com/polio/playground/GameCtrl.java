@@ -67,6 +67,8 @@ public class GameCtrl {
 			String key = req.getParameter("g_no").toString();
 			String genre_name = null;
 			GameinfoDTO dto = ses.selectOne("game.selectOne", key);
+			List<HashMap<String, String>> list = ses.selectList("gnp.gamePlaceList",key);
+			mv.addObject("list", list);
 			HashMap<String,String> map = getGenre();
 			genre_name = map.get(dto.getG_genre());
 			mv.setViewName(".main.game.content");

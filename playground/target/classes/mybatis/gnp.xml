@@ -15,6 +15,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectOne" parameterType="String" resultType="java.util.HashMap">
 		select * from game_and_place where gnp_no=#{gnp_no}
 	</select>
+	<select id="placeGameList" parameterType="String" resultType="java.util.HashMap">
+		SELECT * FROM game_and_place JOIN game_info ON game_and_place.g_no=game_info.g_no WHERE p_no=#{p_no}
+	</select>
+	<select id="gamePlaceList" parameterType="String" resultType="java.util.HashMap">
+		SELECT * FROM game_and_place JOIN place_info ON game_and_place.p_no=place_info.p_no WHERE g_no=#{g_no}
+	</select>
 	<update id="gnpUpdate" parameterType="java.util.HashMap">
 		update game_and_place
 		set p_no=#{p_no},
