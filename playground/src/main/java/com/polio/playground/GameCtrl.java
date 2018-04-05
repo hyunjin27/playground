@@ -107,7 +107,7 @@ public class GameCtrl {
 		return mv;
 	}
 	@RequestMapping(value =  "game_mod_do.play", method = RequestMethod.POST)
-	public ModelAndView GameModeDO(HttpServletRequest req) {
+	public ModelAndView GameModDO(HttpServletRequest req) {
 		HashMap <String,String>map=new HashMap<String,String>();
 		map.put("g_name", req.getParameter("g_name"));
 		map.put("g_genre", req.getParameter("g_genre"));

@@ -9,5 +9,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         <mapper resource="/mybatis/place.xml"/>
         <mapper resource="/mybatis/game.xml"/>
         <mapper resource="/mybatis/front.xml"/>
+        <mapper resource="/mybatis/gnp.xml"/>
     </mappers>
 </configuration>

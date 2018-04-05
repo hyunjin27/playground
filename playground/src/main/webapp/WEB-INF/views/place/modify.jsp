@@ -35,6 +35,7 @@
 <li>오락실 위치코드 : <input id="code" type="text" size="20" name="p_addr" required="required" value="${dto.p_addr}"><input type="button" value="위치코드 찾기" onclick="openChild()"><input type="button" value="해당위치 지도로 보기" onclick="viewmap()"></li>
 <li>오락실 지역 : <input id="p_area" type="text" size="20" name="p_area" readonly="readonly" value="${dto.p_area}"></li>
 <li>설명 : <textarea name="p_detail" cols="20" rows="5">${dto.p_detail}</textarea></li>
+<li><input type="button" value="manage game" onclick="location.href='place_on_game.play?p_no=${dto.p_no}'"></li>
 <li><input type="submit"></li>
 </ul>
 <input type="hidden" name="reguser" value="${sessionScope.userid}">

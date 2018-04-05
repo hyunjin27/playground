@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gnp">
+	<select id="getGame2Pos" parameterType="String" resultType="java.util.HashMap">
+		select * from game_and_place where p_no=#{p_no} order by g_no 
+	</select>
+	<insert id="gnpInsert" parameterType="java.util.HashMap">
+		insert into game_and_place (p_no, g_no, gnp_price, gnp_credit, gnp_detail) values (#{p_no}, #{g_no}, #{gnp_price}, #{gnp_credit}, #{gnp_detail})
+	</insert>
+	<delete id="gnpDelete" parameterType="String">
+    	delete from game_and_place where gnp_no=#{gnp_no} 
+  	</delete>
+	<select id="selectOne" parameterType="String" resultType="java.util.HashMap">
+		select * from game_and_place where gnp_no=#{gnp_no}
+	</select>
+	<update id="gnpUpdate" parameterType="java.util.HashMap">
+		update game_and_place
+		set p_no=#{p_no},
+		g_no=#{g_no},
+		gnp_price=#{gnp_price},
+		gnp_credit=#{gnp_credit},
+		gnp_detail=#{gnp_detail}
+		where gnp_no=#{gnp_no}
+	</update>	
+</mapper>

@@ -30,7 +30,7 @@ h1 {
 	float: right;
 	}
 	
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
 	.pMap{
 	display: none;
 	}
