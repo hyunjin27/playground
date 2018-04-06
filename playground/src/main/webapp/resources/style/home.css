@@ -1,7 +1,8 @@
 @charset "UTF-8";
 .recent {
     float: left;
-    width: 50%;
+    width: 45%;
+    margin: 0 2% 0;
 }
 
 .recent_row:after {
@@ -14,7 +15,6 @@
 }
 .recent table {
 	width: 100%;
-	max-width: 400px;
 }
 .recent th, td {
     border-bottom: 1px solid #ddd;

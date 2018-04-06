@@ -83,8 +83,14 @@ public class MemberCtrl {
 	// insert form
 	@RequestMapping(value="joindo.play", method=RequestMethod.POST)
 	public ModelAndView joinDo(@ModelAttribute("memberDTO") MemberDTO dto) {
-		logger.info("submitted join form");
 		ModelAndView mv = new ModelAndView();
+		int reguser=ses.selectOne("member.usercount", dto.getUserid());
+		if(reguser==1){
+			mv.setViewName(".main.member.msg");
+			mv.addObject("msg", "사용중인 아이디입니다. 다른아이디로 가입하거나 관리자에게 문의하십시오.");
+			mv.addObject("url", "join.play");
+			return mv;
+		}
 		// 패스워드 암호화
 		String pwd = dto.getPwd();
 		Encrypt en = new Encrypt();

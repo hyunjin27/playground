@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/header.css"/>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/button.css"/>
 <div class="navbar">
             <ul class="topnav left">
                 <li><a href="<%=request.getContextPath() %>/">P1AYGROUND</a></li>

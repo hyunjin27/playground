@@ -8,10 +8,11 @@
 	</script>
 </c:if>
 <c:if test="${not empty sessionScope.userid}">
-<h3>게임 등록</h3>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/form.css"/>
+<h1>게임 등록</h1>
 <div id="form">
 <form id="parentForm" action="game_insert.play" method="post">
-<ul>
+<ul class="form">
 <li>게임명 : <input type="text" size="50" name="g_name" required="required"></li>
 <li>장르 :
 <select name="g_genre"> 
@@ -22,7 +23,7 @@
 <li>발매일 : <input type="date" name="g_release"> (Arcade Version)</li>
 <li>사진 : <input type="text" size="50" name="g_photo"> (URL ONLY)</li>
 <li>설명 : <textarea name="g_detail" cols="20" rows="5"></textarea></li>
-<li><input type="submit"></li>
+<li><input type="submit" class="btn-gradient red small"></li>
 </ul>
 <input type="hidden" name="g_no" value="0">
 <input type="hidden" name="reguser" value="${sessionScope.userid}">

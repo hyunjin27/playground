@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/button.css"/>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/form.css"/>
 <%--AIzaSyAvT5BQVpORuQR-AHY9bpZcnxZzpnkH9G0&region=KR--%>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/openlocationcode/latest/openlocationcode.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
@@ -57,11 +59,10 @@ geocoder.geocode({
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvT5BQVpORuQR-AHY9bpZcnxZzpnkH9G0&callback=myMap"></script>
-<ul>
+<ul class="form">
 <li>코드 : <input class="field" size="18" id="pluscode" readonly="readonly"></li>
 <li>주소 : <input class="field" size="50" id="address" readonly="readonly"></li>
-<li><input type="button" value="input" onclick="setParentText()"></li>
-<li><input type="button" value="창닫기" onclick="window.close()"></li> 
+<li><input type="button" value="input" class="btn red mini" onclick="setParentText()"><input type="button" value="창닫기" class="btn blue mini" onclick="window.close()"></li>
 </ul>
 </body>
 </html>

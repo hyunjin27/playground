@@ -3,7 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/home.css"/>
-<h1 style="text-align: center;">Welcome to PlayGround</h1>
+<h1 style="text-align: center;">Welcome to PlayGround<BR>
+<a href="here.play" class="btn-gradient green block">SHOW PLACES AROUND HERE!</a></h1>
  <div class="recent_row">
   <div class="recent">
   <h1>new places</h1>

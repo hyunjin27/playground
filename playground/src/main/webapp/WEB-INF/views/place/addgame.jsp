@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/form.css"/>
 <c:if test="${empty sessionScope.userid}">
 	<script>
 	alert('로그인 후 접근바랍니다.');
@@ -53,12 +54,12 @@ function add(g_no){
 </table>
 <form name="myform" method="post" action="add_game2pos.play">
 <input type="hidden" name="p_no" value="${p_no}">
-<ul>
+<ul class="form">
 <li>게임 : <input type="text" id="g_no" name="g_no" size="5" required="required" readonly="readonly"></li>
 <li>가격 : <input type="text" name="gnp_price" size="8" required="required">원</li>
 <li>크레딧 : <input type="text" name="gnp_credit" size="8" required="required">회</li>
 <li>설명 : <textarea name="gnp_detail" cols="20" rows="5"></textarea></li>
-<li><input type="submit"></li>
+<li><input type="submit" class="btn-gradient red small"></li>
 </ul>
 </form>
 </c:if>
