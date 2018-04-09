@@ -3,6 +3,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/openlocationcode/latest/openlocationcode.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <div id="content_wrapper" style="display: flex;">
@@ -14,6 +24,7 @@
 <li>상세 설명<BR><% pageContext.setAttribute("newLineChar", "\n"); %>${fn:replace(dto.p_detail, newLineChar, "<br/>")}
 </li>
 </ul>
+
 <c:if test="${not empty list}">
 <h3 style="font-family: 'Nanum Pen Script', cursive;">보유게임목록</h3>
 <textarea rows="5" cols="40" readonly="readonly" style="font-size: 12px; overflow-y: scroll; border: 2px solid red; border-radius: 4px;">
@@ -22,6 +33,11 @@
 </c:forEach>
 </textarea>
 </c:if>
+	<div style="display:block; height: 50px;" class="fb-like"
+		data-href="${pageContext.request.requestURL}"
+		data-layout="button" data-action="like" data-size="large"
+		data-show-faces="true" data-share="true">
+	</div>
 </div>
 <div id="content_map" style="width: 70%;">
 <ul>
@@ -31,7 +47,6 @@
 <div id="map" style="width:100%; height:300px;">Position to map</div>
 </div>
 </div>
-
 <script>
 function myMap() {
 	var area = OpenLocationCode.decode('${dto.p_addr}');
