@@ -1,18 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/form.css"/>
 <c:if test="${flag eq 'edit'}">
 <h1>Edit User Information</h1>
 <form name="myform" action="useredit.play" method="post">
-<ul>
+<ul class="form">
 <li>아이디 : ${dto.userid}</li>
 <li>암호 : <input type="button" value="password change" class="btn cyan mini" onclick="location.href='pwdchg.play'"></li>
 <li>이름 : <input type="text" size="20" name="name" value="${dto.name}" required="required"></li>
 <li>이메일 : <input type="email" size="30" name="email" value="${dto.email}" required></li>
 <li>생년월일 :  <input type="date" name="birth" value="${dto.birth}"></li>
-</ul>
+<li>
 <input type="hidden" name="userid" value="${sessionScope.userid}">
 <input type="submit" class="btn-gradient red small"><input type="reset" class="btn-gradient blue small">
+</li>
+</ul>
 </form>
 </c:if>
 <c:if test="${flag eq 'pwd'}">

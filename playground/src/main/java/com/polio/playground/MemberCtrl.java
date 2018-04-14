@@ -1,5 +1,7 @@
 package com.polio.playground;
 import com.polio.playground.Encrypt;
+
+import java.io.IOError;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -82,7 +84,7 @@ public class MemberCtrl {
 	
 	// insert form
 	@RequestMapping(value="joindo.play", method=RequestMethod.POST)
-	public ModelAndView joinDo(@ModelAttribute("memberDTO") MemberDTO dto) {
+	public ModelAndView joinDo(@ModelAttribute("memberDTO") MemberDTO dto, HttpServletRequest req) throws IOException {
 		ModelAndView mv = new ModelAndView();
 		int reguser=ses.selectOne("member.usercount", dto.getUserid());
 		if(reguser==1){
@@ -101,10 +103,20 @@ public class MemberCtrl {
 			logger.info("null birth"); 
 			dto.setBirth(null);
 			}
-		ses.insert("member.insertMember", dto);
-		mv.setViewName(".main.member.msg");
-		mv.addObject("msg", dto.getName() + " 님 가입을 축하드립니다.");
-		mv.addObject("url", "login.play");
+		String gRecaptchaResponse = req.getParameter("g-recaptcha-response");
+		System.out.println(gRecaptchaResponse);
+		boolean verify = en.VerifyRecaptcha(gRecaptchaResponse);
+		if (verify) {
+			ses.insert("member.insertMember", dto);
+			mv.setViewName(".main.member.msg");
+			mv.addObject("msg", dto.getName() + " 님 가입을 축하드립니다.");
+			mv.addObject("url", "login.play");
+
+		}else{
+			mv.setViewName(".main.member.msg");
+			mv.addObject("msg", "자동 가입 방지 절차를 진행하지 않았습니다. 다시 가입을 진행하여 주십시오.");
+			mv.addObject("url", "join.play");
+		}
 		return mv;
 	}
 	

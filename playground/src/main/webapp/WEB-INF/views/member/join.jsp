@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/script/join.js"></script>
 <h1>JOIN to PlayGround</h1>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/style/form.css"/>
@@ -12,6 +13,7 @@
 <li>이름 : <input type="text" size="20" name="name" required="required"></li>
 <li>이메일 : <input type="email" size="30" name="email" required></li>
 <li>생년월일 : <input type="date" name="birth"></li>
+<li>자동가입방지 : <div class="g-recaptcha" data-sitekey="6LdcKFMUAAAAADOhUpXxygzc3DsQW2rTalD6-109"></div></li>
+<li><input type="submit" class="btn-gradient red small"><input type="reset" class="btn-gradient blue small"></li>
 </ul>
-<input type="submit" class="btn-gradient red small"><input type="reset" class="btn-gradient blue small"><br>
 </form>
